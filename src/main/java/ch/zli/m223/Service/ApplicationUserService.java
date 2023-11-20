@@ -30,9 +30,13 @@ public class ApplicationUserService {
     public ApplicationUser updateApplicationUser(Long id,ApplicationUser applicationUser) {
         Optional<ApplicationUser> applicationUserOptional = applicationUserRepository.findById(id);
         if (applicationUserOptional.isPresent()) {
-            ApplicationUser applicationUser1 = applicationUserOptional.get();
-            applicationUser1 = applicationUser;
-            return this.applicationUserRepository.save(applicationUser1);
+            applicationUserOptional.get().setName(applicationUser.getName());
+            applicationUserOptional.get().setEmail(applicationUser.getEmail());
+            applicationUserOptional.get().setSurname(applicationUser.getSurname());
+            applicationUserOptional.get().setBookings(applicationUser.getBookings());
+            applicationUserOptional.get().setPassword(applicationUser.getPassword());
+            applicationUserOptional.get().setRole(applicationUser.getRole());
+            return this.applicationUserRepository.save(applicationUserOptional.get());
         }
         return null;
     }
