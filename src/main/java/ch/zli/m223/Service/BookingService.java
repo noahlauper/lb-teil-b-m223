@@ -9,6 +9,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -86,5 +87,32 @@ public class BookingService {
         location.setAvailableAfternoon(isAfternoon);
         locationRepository.save(location);
         return savedBooking;
+    }
+
+    public List<Booking> getBookingsFromUser(String email) {
+        Optional<ApplicationUser> applicationUserOptional = applicationUserRepository.findByEmail(email);
+        return applicationUserOptional.map(ApplicationUser::getBookings).orElse(null);
+    }
+
+    public Booking getBookingById(Long bookingId) {
+        Optional<Booking> bookingOptional = bookingRepository.findById(bookingId);
+        return bookingOptional.orElse(null);
+    }
+
+    public void deleteBooking(Long bookingId) {
+        bookingRepository.deleteById(bookingId);
+    }
+
+    public void deletePersonalBooking(Long bookingId, String email) {
+        Optional<ApplicationUser> applicationUserOptional = applicationUserRepository.findByEmail(email);
+        if (applicationUserOptional.isPresent()) {
+            for (Booking booking: applicationUserOptional.get().getBookings()) {
+                if (Objects.equals(booking.getId(), bookingId)) {
+                    this.bookingRepository.deleteById(bookingId);
+                }
+            }
+
+        }
+
     }
 }
