@@ -16,7 +16,8 @@ public class ApplicationUserService {
     private final ApplicationUserRepository applicationUserRepository;
 
     public ApplicationUser createUser(ApplicationUser applicationUser) {
-        return this.applicationUserRepository.save(applicationUser);
+        ApplicationUser finalApplicationUser = new ApplicationUser(applicationUser.getSurname(), applicationUser.getName(), applicationUser.getEmail(), applicationUser.getPassword(), applicationUser.getRole());
+        return this.applicationUserRepository.save(finalApplicationUser);
     }
 
     public List<ApplicationUser> getApplicationUsers() {

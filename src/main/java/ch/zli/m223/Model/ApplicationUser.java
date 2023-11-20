@@ -1,5 +1,6 @@
 package ch.zli.m223.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -38,6 +39,7 @@ public class ApplicationUser implements UserDetails {
     private String role;
 
     @OneToMany(mappedBy = "applicationUser")
+    @JsonIgnore
     private List<Booking> bookings;
 
     public ApplicationUser(String surname, String name, String email, String password, String role) {

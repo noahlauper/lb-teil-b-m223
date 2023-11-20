@@ -1,5 +1,7 @@
 package ch.zli.m223.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,13 +23,26 @@ public class Booking {
     @Temporal(TemporalType.DATE)
     private Date date;
 
-    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Period period;
 
-    @Column(nullable = false)
-    private boolean isAccapted;
+    private Status status;
+
+    @ManyToOne
+    @JoinColumn(name = "location_id", nullable = false)
+    @JsonIgnore
+    private Location location;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private ApplicationUser applicationUser;
+
+    public Booking(Date date, Period period, Status status) {
+        this.date = date;
+        this.period = period;
+        this.status = status;
+        this.location = new Location();
+        this.applicationUser = new ApplicationUser();
+    }
 }
