@@ -1,0 +1,657 @@
+{
+	"info": {
+		"_postman_id": "ce0a54c7-44e5-4499-be21-1770e6d88ca5",
+		"name": "lb-b-m223",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19518466"
+	},
+	"item": [
+		{
+			"name": "ApplicationUser",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "getUsers",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwiaWF0IjoxNzAwNDc0MzI5LCJleHAiOjE3MDA1NjA3Mjl9.lbugYDr4urTRVmti-i99DpC97WjVIKU_sPbDDjK4OmY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/application-user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"application-user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwiaWF0IjoxNzAwNDc0MzI5LCJleHAiOjE3MDA1NjA3Mjl9.lbugYDr4urTRVmti-i99DpC97WjVIKU_sPbDDjK4OmY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/application-user/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"application-user",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QuY29tIiwiaWF0IjoxNzAwNDc0MzI5LCJleHAiOjE3MDA1NjA3Mjl9.lbugYDr4urTRVmti-i99DpC97WjVIKU_sPbDDjK4OmY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"surname\": \"test\",\r\n    \"name\": \"test\",\r\n    \"email\": \"test@test5.com\",\r\n    \"password\": \"test123\",\r\n    \"role\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/application-user/update/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"application-user",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addUser",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDU2MjIzOCwiZXhwIjoxNzAwNjQ4NjM4fQ.aoirA6Jy9UkbK2N5zrN14zK8KddsoBQKMKqfiqNxTuY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"surname\": \"test\",\r\n    \"name\": \"test\",\r\n    \"email\": \"test@test2.com\",\r\n    \"password\": \"test123\",\r\n    \"role\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/application-user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"application-user"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Member",
+					"item": [
+						{
+							"name": "getBookings",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzcyNywiZXhwIjoxNzAwNTc0MTI3fQ.4ins2zXWY2N6i2_mjt8oJAl10HXZF2FJBb2vIMd2roY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/booking/getPersonalBookings",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"booking",
+										"getPersonalBookings"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "removePersonalBooking",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzcyNywiZXhwIjoxNzAwNTc0MTI3fQ.4ins2zXWY2N6i2_mjt8oJAl10HXZF2FJBb2vIMd2roY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/booking/deletePersonalBooking/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"booking",
+										"deletePersonalBooking",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updatePersonalData",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDU2MjIzOCwiZXhwIjoxNzAwNjQ4NjM4fQ.aoirA6Jy9UkbK2N5zrN14zK8KddsoBQKMKqfiqNxTuY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"surname\": \"test\",\r\n    \"name\": \"test\",\r\n    \"email\": \"test@test2.com\",\r\n    \"password\": \"test123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/application-user/updatePersonalData",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"application-user",
+										"updatePersonalData"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"test\",\r\n    \"name\": \"test\",\r\n    \"email\": \"test@test2.com\",\r\n    \"password\": \"test123\",\r\n    \"role\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test@test2.com\",\r\n    \"password\": \"test123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Booking",
+			"item": [
+				{
+					"name": "createBooking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzcyNywiZXhwIjoxNzAwNTc0MTI3fQ.4ins2zXWY2N6i2_mjt8oJAl10HXZF2FJBb2vIMd2roY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"date\": \"2012-04-23T18:25:43.511+00:00\",\r\n    \"period\": \"FULLDAY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/booking/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllBookings",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzQ0MSwiZXhwIjoxNzAwNTczODQxfQ.XiSrmihKaadTzaqF89xfPJpYyb0e5uVPufcvd3mU1q4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bookingStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzcyNywiZXhwIjoxNzAwNTc0MTI3fQ.4ins2zXWY2N6i2_mjt8oJAl10HXZF2FJBb2vIMd2roY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking/1/ACCEPTED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"1",
+								"ACCEPTED"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzcyNywiZXhwIjoxNzAwNTc0MTI3fQ.4ins2zXWY2N6i2_mjt8oJAl10HXZF2FJBb2vIMd2roY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteBooking",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzcyNywiZXhwIjoxNzAwNTc0MTI3fQ.4ins2zXWY2N6i2_mjt8oJAl10HXZF2FJBb2vIMd2roY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/booking/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"booking",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "addLocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzcyNywiZXhwIjoxNzAwNTc0MTI3fQ.4ins2zXWY2N6i2_mjt8oJAl10HXZF2FJBb2vIMd2roY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isAvailableMorning\": false,\r\n    \"isAvailableAfternoon\": false,\r\n    \"isAvailableOnFullDay\": false,\r\n    \"date\": \"2012-04-23T18:25:43.511Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getLocation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NDUyMSwiZXhwIjoxNzAwNTcwOTIxfQ.LUplDZVX2wasxKcAPR56tcuk77M2j79vbh2agojrPjs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/location/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllLocations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzQ0MSwiZXhwIjoxNzAwNTczODQxfQ.XiSrmihKaadTzaqF89xfPJpYyb0e5uVPufcvd3mU1q4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/location",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeLocation",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/location/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateLocation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiYWRtaW4iLCJzdWIiOiJ0ZXN0QHRlc3QyLmNvbSIsImlhdCI6MTcwMDQ4NzcyNywiZXhwIjoxNzAwNTc0MTI3fQ.4ins2zXWY2N6i2_mjt8oJAl10HXZF2FJBb2vIMd2roY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isAvailableMorning\": false,\r\n    \"isAvailableAfternoon\": false,\r\n    \"isAvailableOnFullDay\": false,\r\n    \"date\": \"2012-04-23T18:25:43.511Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/location/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"location",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

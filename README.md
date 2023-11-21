@@ -29,4 +29,4 @@ Die Daten werden in einer PostgreSQL-Datenbank gespeichert. In der Entwicklungsu
 - Password: `postgres`
 
 ## Testdaten
-Testdaten werden automatisch beim starten des Projektes erstellt.
+Die Testdaten werden automatisch beim starten des Projektes erstellt.
