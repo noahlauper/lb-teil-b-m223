@@ -1,0 +1,109 @@
+commit 4e02e3cc6a29eff101cd71864bff9f52f1723b9e
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Tue Nov 21 14:44:39 2023 +0100
+
+    Added Postman collection
+
+commit 7f5d6fecf86b9080d82768e25a838a96151443cf
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Tue Nov 21 14:38:19 2023 +0100
+
+    final changes. Added admin varification to missing Methods and added Method to add a User as a admin
+
+commit 7d2866568a97e444fb3a5246ec1b2a359ebe05f6
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Tue Nov 21 14:04:52 2023 +0100
+
+    Updated create user function so that the first user is an admin
+
+commit ebd2e202fe6b967456f8908c152f2baeb390b20a
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Tue Nov 21 13:58:11 2023 +0100
+
+    implemented swagger and it is now runnable. Added read.md
+
+commit 190425bbb7a79945c66129f75ee302623e4673d8
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Tue Nov 21 09:00:08 2023 +0100
+
+    Imlemented Test Data and Swagger Dependencys
+
+commit 06feeccddbbd8672b51fbe9c6b7bf10cadb15072
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Mon Nov 20 15:48:44 2023 +0100
+
+    Added getByid and delete of Bookings
+    
+    added Requests and Methods to delete bookings as admin and personal bookings as memeber
+
+commit 1d223e22033c6a21608494b1ca049c93845528e7
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Mon Nov 20 14:46:26 2023 +0100
+
+    Booking and Location Functionality
+    
+    Added Functionality to Add and Change Status of Bookings. Added CRUD Functionality for Locations
+
+commit 0eec6120c13bc0b49626962f0c2936031247ac99
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Mon Nov 20 11:05:30 2023 +0100
+
+    updated Request so only admin can access User CRUD Requests
+    
+    Implemented a validation, that only a admin can access the CRUD Requests for the ApplicationUser
+
+commit 236b988c3f72fbf502fc5c0e04f7927c091d8098
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Mon Nov 20 10:38:24 2023 +0100
+
+    Implemented Login Register and CRUD for ApplicaltionuUser
+    
+    Added and Edited Files are:
+    Jwt Service,
+    Configuration Files,
+    Updated:
+    AuthenticationController,
+    ApplicationUserController,
+    ApplicationUserService,
+    ApplicationUserRepository,
+    ApplicationUser
+
+commit a90d8738f3257e285646f08ac488f17119641f98
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Sun Nov 19 18:12:11 2023 +0100
+
+    Added Validate Dependency and Credential Model
+
+commit 771fadc45741434acae22dfa4068a14523a11454
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Sun Nov 19 17:48:01 2023 +0100
+
+    added Repositorys and Services
+    
+    Added all necessary Repositorys and Services for the project
+
+commit d490022ff77f43bf9a71d957771923a3af0ab5ab
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Wed Nov 15 16:24:55 2023 +0100
+
+    Added Models
+    
+    Added all necessary models:
+    ApplicationUser,
+    Location,
+    Booking,
+    Period
+
+commit c23787089e556143e88d4644ba4e7610e1da253b
+Author: noahlauper <noahlauper@gmail.com>
+Date:   Wed Nov 15 15:53:04 2023 +0100
+
+    initialize
+    
+    Added Spring project to Repository
+
+commit 6f7715ed57072b7ed04ade599970cebe5ba3fd56
+Author: noahlauper <90258475+noahlauper@users.noreply.github.com>
+Date:   Wed Nov 15 15:39:10 2023 +0100
+
+    Initial commit
