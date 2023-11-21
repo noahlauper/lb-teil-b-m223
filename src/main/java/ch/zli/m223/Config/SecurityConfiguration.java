@@ -1,5 +1,6 @@
 package ch.zli.m223.Config;
 
+import io.swagger.models.HttpMethod;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

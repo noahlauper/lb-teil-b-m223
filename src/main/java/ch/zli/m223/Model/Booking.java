@@ -26,6 +26,7 @@ public class Booking {
     @Enumerated(EnumType.STRING)
     private Period period;
 
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @ManyToOne
@@ -44,5 +45,13 @@ public class Booking {
         this.status = status;
         this.location = new Location();
         this.applicationUser = new ApplicationUser();
+    }
+
+    public Booking(Date date, Period period, Status status, Location location, ApplicationUser applicationUser) {
+        this.date = date;
+        this.period = period;
+        this.status = status;
+        this.location = location;
+        this.applicationUser = applicationUser;
     }
 }

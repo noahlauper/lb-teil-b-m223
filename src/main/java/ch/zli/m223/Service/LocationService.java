@@ -27,7 +27,7 @@ public class LocationService {
 
     @Transactional
     public Location createLocation(Location location) {
-        Location finalLocation = new Location(true, true, true, location.getDate());
+        Location finalLocation = new Location(location.getName(), true, true, true, location.getDate());
         return locationRepository.save(finalLocation);
     }
 

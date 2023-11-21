@@ -23,6 +23,8 @@ public class Location {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+
     private boolean isAvailableMorning;
 
     private boolean isAvailableAfternoon;
@@ -35,7 +37,8 @@ public class Location {
     @JsonIgnore
     private List<Booking> bookings;
 
-    public Location(boolean isAvailableMorning, boolean isAvailableAfternoon, boolean isAvailableOnFullDay, Date date) {
+    public Location(String name, boolean isAvailableMorning, boolean isAvailableAfternoon, boolean isAvailableOnFullDay, Date date) {
+        this.name = name;
         this.isAvailableMorning = isAvailableMorning;
         this.isAvailableAfternoon = isAvailableAfternoon;
         this.isAvailableOnFullDay = isAvailableOnFullDay;
