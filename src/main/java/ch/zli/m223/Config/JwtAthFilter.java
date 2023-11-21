@@ -44,7 +44,7 @@ public class JwtAthFilter extends OncePerRequestFilter {
         userName = jwtService.extractUsername(jwt);
         if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(userName);
-            if (jwtService.isTokenValid(jwt, userName)) {
+            if (jwtService.isTokenValid(jwt, userName) || request.getRequestURI().contains("swagger") || request.getRequestURI().contains("/v2/api/docs")) {
                 System.out.println("inside if");
                 UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
                         userDetails,

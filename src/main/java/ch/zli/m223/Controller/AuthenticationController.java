@@ -29,7 +29,13 @@ public class AuthenticationController {
 
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> authenticate(
-            @RequestBody Credential credential) {
-        return ResponseEntity.ok(authenticationService.authenticate(credential));
+            @RequestBody Credential credential
+    ) {
+        AuthenticationResponse response = authenticationService.authenticate(credential);
+        if (response != null) {
+            return ResponseEntity.ok(response);
+        } else {
+            return ResponseEntity.status(401).body(null);
+        }
     }
 }
