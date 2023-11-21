@@ -1,8 +1,11 @@
 package ch.zli.m223.Controller;
 
+import ch.zli.m223.Config.FeignClientInterceptor;
 import ch.zli.m223.Model.Location;
+import ch.zli.m223.Service.JwtService;
 import ch.zli.m223.Service.LocationService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,39 +16,58 @@ import java.util.List;
 public class LocationController {
 
     private final LocationService locationService;
-
+    private final JwtService jwtService;
     @GetMapping
     public List<Location> getAllLocations() {
         return locationService.getAllLocations();
     }
 
     @GetMapping("/{locationId}")
-    public Location getLocationById(
+    public ResponseEntity<Location> getLocationById(
             @PathVariable Long locationId
     ) {
-        return locationService.getLocationById(locationId);
+        if (jwtService.extractRoleFromJwt(FeignClientInterceptor.getBearerTokenHeader().trim().replaceFirst("^Bearer\\s+", "")).equals("admin")) {
+            return ResponseEntity.ok(locationService.getLocationById(locationId));
+        } else {
+            return ResponseEntity.status(403).body(null);
+        }
     }
 
     @PostMapping
-    public Location createLocation(
+    public ResponseEntity<Location> createLocation(
             @RequestBody Location location
     ) {
-        return locationService.createLocation(location);
+        if (jwtService.extractRoleFromJwt(FeignClientInterceptor.getBearerTokenHeader().trim().replaceFirst("^Bearer\\s+", "")).equals("admin")) {
+            return ResponseEntity.ok(locationService.createLocation(location));
+        } else {
+            return ResponseEntity.status(403).body(null);
+        }
+
     }
 
     @PutMapping("/{locationId}")
-    public Location updateLocation(
+    public ResponseEntity<Location> updateLocation(
             @PathVariable Long locationId,
             @RequestBody Location location
     ) {
-        location.setId(locationId);
-        return locationService.updateLocation(location);
+        if (jwtService.extractRoleFromJwt(FeignClientInterceptor.getBearerTokenHeader().trim().replaceFirst("^Bearer\\s+", "")).equals("admin")) {
+            location.setId(locationId);
+            return ResponseEntity.ok(locationService.updateLocation(location));
+        } else {
+            return ResponseEntity.status(403).body(null);
+        }
+
     }
 
     @DeleteMapping("/{locationId}")
-    public void deleteLocation(
+    public ResponseEntity<String> deleteLocation(
             @PathVariable Long locationId
     ) {
-        locationService.deleteLocation(locationId);
+        if (jwtService.extractRoleFromJwt(FeignClientInterceptor.getBearerTokenHeader().trim().replaceFirst("^Bearer\\s+", "")).equals("admin")) {
+            locationService.deleteLocation(locationId);
+            return ResponseEntity.ok("Location has been deleted");
+        } else {
+            return ResponseEntity.status(403).body(null);
+        }
     }
 }

@@ -20,11 +20,24 @@ public class ApplicationUserController {
     private final JwtService jwtService;
 
     @GetMapping()
-    public List<ApplicationUser> getApplicationUsers() {
+    public ResponseEntity<List<ApplicationUser>> getApplicationUsers() {
         if (jwtService.extractRoleFromJwt(FeignClientInterceptor.getBearerTokenHeader().trim().replaceFirst("^Bearer\\s+", "")).equals("admin")) {
-            return this.applicationUserService.getApplicationUsers();
+            return ResponseEntity.ok(this.applicationUserService.getApplicationUsers());
+        } else {
+            return ResponseEntity.status(403).body(null);
         }
-        return null;
+    }
+
+    @PostMapping()
+    public ResponseEntity<ApplicationUser> addUser(
+            @RequestBody ApplicationUser applicationUser
+    ) {
+        if (jwtService.extractRoleFromJwt(FeignClientInterceptor.getBearerTokenHeader().trim().replaceFirst("^Bearer\\s+", "")).equals("admin")) {
+            return ResponseEntity.ok(applicationUserService.createUser(applicationUser));
+        } else {
+            return ResponseEntity.status(403).body(null);
+        }
+
     }
 
     @DeleteMapping("/{id}")
@@ -40,7 +53,7 @@ public class ApplicationUserController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<ApplicationUser> applicationUser(
+    public ResponseEntity<ApplicationUser> updateApplicationUser(
             @PathVariable Long id,
             @RequestBody ApplicationUser applicationUser
     ) {
@@ -48,6 +61,19 @@ public class ApplicationUserController {
             return ResponseEntity.ok(this.applicationUserService.updateApplicationUser(id, applicationUser));
         } else {
             return ResponseEntity.status(403).body(null);
+        }
+    }
+
+    @PutMapping("/updatePersonalData")
+    public ResponseEntity<ApplicationUser> updatePersonalData(
+            @RequestBody ApplicationUser applicationUser
+    ) {
+        ApplicationUser applicationUser1 = this.applicationUserService.personalUserData(applicationUser, jwtService.extractUsername(FeignClientInterceptor.getBearerTokenHeader().trim().replaceFirst("^Bearer\\s+", "")));
+
+        if (applicationUser1 != null) {
+            return ResponseEntity.ok(applicationUser1);
+        } else {
+            return ResponseEntity.status(404).body(null);
         }
     }
 }

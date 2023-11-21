@@ -56,6 +56,7 @@ public class BookingService {
         return this.bookingRepository.findAll();
     }
 
+    @Transactional
     public Booking changeBookingStatus(Status status, Long bookingId) {
         Optional<Booking> bookingOptional = bookingRepository.findById(bookingId);
         if (bookingOptional.isPresent()) {
@@ -94,15 +95,18 @@ public class BookingService {
         return applicationUserOptional.map(ApplicationUser::getBookings).orElse(null);
     }
 
+
     public Booking getBookingById(Long bookingId) {
         Optional<Booking> bookingOptional = bookingRepository.findById(bookingId);
         return bookingOptional.orElse(null);
     }
 
+    @Transactional
     public void deleteBooking(Long bookingId) {
         bookingRepository.deleteById(bookingId);
     }
 
+    @Transactional
     public void deletePersonalBooking(Long bookingId, String email) {
         Optional<ApplicationUser> applicationUserOptional = applicationUserRepository.findByEmail(email);
         if (applicationUserOptional.isPresent()) {
